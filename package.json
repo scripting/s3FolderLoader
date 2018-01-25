@@ -1,0 +1,22 @@
+{
+	"name": "s3FolderLoader",
+	"description": "Download a folder from S3.",
+	"author": "Dave Winer <dave@smallpicture.com>",
+	"license": "MIT",
+	"version": "0.4.0",
+	"main": "loadfolder.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/scripting/s3folderloader.git"
+		},
+	"dependencies" : {
+		"daveutils": "*",
+		"daves3": "*"
+		}, 
+	"files": [
+		"loadfolder.js"
+		],
+	"engines": {
+		"node": "*"
+		}
+	}
