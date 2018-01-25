@@ -1,5 +1,5 @@
 {
-	"name": "s3FolderLoader",
+	"name": "s3folderloader",
 	"description": "Download a folder from S3.",
 	"author": "Dave Winer <dave@smallpicture.com>",
 	"license": "MIT",
