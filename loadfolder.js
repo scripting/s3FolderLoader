@@ -1,4 +1,4 @@
-const myProductName = "s3FolderLoader", myVersion = "0.4.0";    
+const myProductName = "s3FolderLoader", myVersion = "0.4.1";    
 
 exports.load = loadFromS3;
 
@@ -7,7 +7,7 @@ const utils = require ("daveutils");
 const s3 = require ("daves3"); 
 
 function loadFromS3 (s3path, basefolder, callback) {
-	var logtext = "";
+	var logtext = "", ctFilesChanged = 0;
 	function consoleLog (s) {
 		logtext += s + "<br>";
 		console.log (s);
@@ -27,6 +27,7 @@ function loadFromS3 (s3path, basefolder, callback) {
 		}
 	function downloadFile (s3path, f, whenModified, callback) {
 		consoleLog ("downloadFile: s3path == " + s3path);
+		ctFilesChanged++;
 		s3.getObject (s3path, function (err, data) {
 			if (err) {
 				console.log ("downloadFile: error reading S3 file == " + err.message);
@@ -78,7 +79,7 @@ function loadFromS3 (s3path, basefolder, callback) {
 					});
 				}
 			else {
-				callback (logtext);
+				callback (ctFilesChanged + " files changed");
 				}
 			}
 		considerFile (0);
