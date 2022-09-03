@@ -13,7 +13,7 @@ const fs = require ("fs");
 var config = {
 	port: 1408,
 	flLogToConsole: true,
-	flAllowAccessFromAnywhere: true //for davehttp
+	flAllowAccessFromAnywhere: true, //for davehttp
 	locations: [ 
 		{
 			s3path: "/bloatware.com/code/bloatbase/",
@@ -63,8 +63,10 @@ function loadAllFolders (callback) {
 	loadone (0);
 	}
 function everyMinute () {
-	var now = new Date (), timestring = now.toLocaleTimeString ();
-	console.log (myProductName + " v" + myVersion + ": " + timestring + ".\n");
+	var now = new Date ();
+	if (now.getMinutes () == 0) { //only once per hour -- 9/25/19 by DW
+		console.log (myProductName + " v" + myVersion + ": " + now.toLocaleTimeString () + ".\n");
+		}
 	readConfig ();
 	}
 
