@@ -3,7 +3,7 @@
 	"description": "Download a folder from S3.",
 	"author": "Dave Winer <dave@smallpicture.com>",
 	"license": "MIT",
-	"version": "0.4.6",
+	"version": "0.4.8",
 	"main": "loadfolder.js",
 	"repository": {
 		"type": "git",
@@ -15,6 +15,7 @@
 		}, 
 	"files": [
 		"loadfolder.js",
+		"worknotes.md",
 		"loadfolder.opml"
 		],
 	"engines": {

@@ -1,6 +1,6 @@
-const myProductName = "s3FolderLoader", myVersion = "0.4.6";    
+const myProductName = "s3FolderLoader", myVersion = "0.4.8";    
 
-exports.load = loadFromS3;
+exports.load = frontendForLoadFromS3;
 
 const fs = require ("fs");
 const utils = require ("daveutils");
@@ -96,6 +96,14 @@ function loadFromS3 (s3path, basefolder, callback) {
 		});
 	}
 
+function frontendForLoadFromS3 (s3path, basefolder, callback) { //8/12/23 by DW
+	try {
+		loadFromS3 (s3path, basefolder, callback);
+		}
+	catch (err) {
+		callback (new Object ()); //return an empty object
+		}
+	}
 
 
 
